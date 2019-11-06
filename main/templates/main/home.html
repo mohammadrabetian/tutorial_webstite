@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tutorial Website Home Page</title>
+    <link rel="stylesheet" href="{% static "tinymce/css/prism.css" %}">
+</head>
+<body>
+    {% for tut in tutorials %}
+        <p>{{ tut.tutorial_title }}</p>
+        <p>{{ tut.tutorial_published }}</p>
+        <p>{{ tut.tutorial_content|safe }}</p>
+        <br><br>
+    {% endfor %}
+    <script src="{% static "tinymce/js/prism.js" %}"></script>
+</body>
+</html>
