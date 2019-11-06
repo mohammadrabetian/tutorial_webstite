@@ -1,20 +1,17 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tutorial Website Home Page</title>
-    <link rel="stylesheet" href="{% static "tinymce/css/prism.css" %}">
-</head>
-<body>
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="row">
     {% for tut in tutorials %}
-        <p>{{ tut.tutorial_title }}</p>
-        <p>{{ tut.tutorial_published }}</p>
-        <p>{{ tut.tutorial_content|safe }}</p>
-        <br><br>
+    <div class="col s12 m6">
+        <div class="card hoverable">
+          <div class="card-content">
+            <span class="card-title">{{tut.tutorial_title}}</span>
+            <p style="font-size:70%">Published {{tut.tutorial_published}}</p>
+            <p>{{tut.tutorial_content|safe}}</p>
+          </div>
+        </div>
+      </div>
     {% endfor %}
-    <script src="{% static "tinymce/js/prism.js" %}"></script>
-</body>
-</html>
+    {% endblock content %}
+</div>
