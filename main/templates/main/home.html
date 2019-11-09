@@ -1,17 +1,16 @@
 {% extends 'main/base.html' %}
 
 {% block content %}
-<div class="row">
+  <div class="row">
     {% for tut in tutorials %}
-    <div class="col s12 m6">
-        <div class="card hoverable">
-          <div class="card-content">
-            <span class="card-title">{{tut.tutorial_title}}</span>
-            <p style="font-size:70%">Published {{tut.tutorial_published}}</p>
-            <p>{{tut.tutorial_content|safe}}</p>
+        <div class="col s12 m6">
+          <div class="card hoverable">
+            <div class="card-content">
+              <span class="card-title">{{tut.tutorial_title}}</span>
+              <p style="font-size:70%">Published {{tut.tutorial_published}}</p>
+              <p>{{tut.tutorial_content|safe}}</p>
+            </div>
           </div>
         </div>
-      </div>
     {% endfor %}
-    {% endblock content %}
-</div>
+{% endblock %}
